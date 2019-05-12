@@ -2,7 +2,9 @@ const http = require("http");
 const net = require("net");
 const url = require("url");
 
-const PORT = 2333;
+const config = require('./config');
+
+const { port, hostname } = config;
 
 function handleRequest(request, response) {
   const u = url.parse(request.url);
@@ -40,8 +42,8 @@ function serve() {
   http.createServer()
     .on('request', handleRequest)
     .on('connect', handleConnect)
-    .listen(PORT, '0.0.0.0',
-      () => console.log(`server run at 0.0.0.0:${PORT}`));
+    .listen(port, hostname,
+      () => console.log(`server run at ${hostname}:${port}`));
 }
 
 serve();
