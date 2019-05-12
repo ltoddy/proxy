@@ -25,7 +25,7 @@ function handleRequest(request, response) {
 }
 
 function handleConnect(request, socket) {
-  const u = url.parse(request.url);
+  const u = url.parse('http://' + request.url);
 
   const s = net.connect(u.port, u.hostname, () => {
     socket.write('HTTP/1.1 200 Connection Established\r\n\r\n');
