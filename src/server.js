@@ -2,9 +2,7 @@ const http = require("http");
 const net = require("net");
 const url = require("url");
 
-const config = require('./config');
-
-const { port, hostname } = config;
+const { port, hostname } = require('./config');
 
 function handleRequest(request, response) {
   const u = url.parse(request.url);
