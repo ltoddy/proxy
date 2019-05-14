@@ -6,7 +6,6 @@
   "author": "ltoddy <taoliu0509@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "npm run watch-ts & npm run watch-node",
     "build": "tsc",
     "serve": "node dist/server.js",
     "watch-node": "nodemon dist/server.js",
